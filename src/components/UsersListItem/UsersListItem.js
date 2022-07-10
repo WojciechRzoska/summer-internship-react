@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FiEdit } from 'react-icons/fi';
 import { AiFillDelete } from 'react-icons/ai';
+import { GrArticle } from 'react-icons/gr';
 
 const UsersListItem = ({
   deleteUser,
@@ -16,7 +17,7 @@ const UsersListItem = ({
       <td>{email}</td>
       <td>{gender}</td>
       <td>{status}</td>
-      <td>
+      <td className="action">
         <Button
           onClick={() => {
             navigate('/edit-user', { state: { id: id } });
@@ -26,6 +27,14 @@ const UsersListItem = ({
         </Button>
         <Button variant="danger" onClick={() => deleteUser(id)}>
           <AiFillDelete />
+        </Button>
+        <Button
+          variant="success"
+          onClick={() => {
+            navigate('/user-posts', { state: { id: id, name: name } });
+          }}
+        >
+          <GrArticle />
         </Button>
       </td>
     </tr>

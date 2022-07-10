@@ -1,7 +1,10 @@
 .wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   max-width: 1000px;
+  height: 100vh;
+}
+.action .btn {
+  margin-left: 10px;
 }
